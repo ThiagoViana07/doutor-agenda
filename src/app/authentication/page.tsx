@@ -1,9 +1,8 @@
 "use client";
 
-import { Card } from "@/components/ui/card";
-import {} from "@/components/ui/form";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
+import LoginForm from "./components/login-form";
 import SignUpForm from "./components/sign-up-form";
 
 // const loginSchema = z.object({
@@ -22,7 +21,7 @@ const AuthenticationPage = () => {
           <TabsTrigger value="register">Criar conta</TabsTrigger>
         </TabsList>
         <TabsContent value="login">
-          <Card></Card>
+          <LoginForm />
         </TabsContent>
         <TabsContent value="register">
           <SignUpForm />
