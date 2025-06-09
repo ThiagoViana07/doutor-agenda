@@ -49,7 +49,6 @@ const LoginForm = () => {
     },
   });
   async function onSubmit(values: z.infer<typeof loginSchema>) {
-    console.log("aqui", values);
     await authClient.signIn.email(
       {
         email: values.email,
@@ -110,7 +109,7 @@ const LoginForm = () => {
               {form.formState.isSubmitting ? (
                 <Loader2 className="mr-2 h-4 w-4 animate-spin" />
               ) : (
-                "Criar conta"
+                "Entrar"
               )}
             </Button>
           </CardFooter>
