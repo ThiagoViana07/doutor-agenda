@@ -16,13 +16,17 @@ const DashboardPage = async () => {
   if (!session?.user) {
     redirect("/authentication");
   }
-  const clinics = await db.query.usersToClinicsTable.findMany({
-    where: eq(usersToClinicsTable.userId, session.user.id),
-  });
 
-  if (clinics.length === 0) {
+  if (!session.user.clinic) {
     redirect("/clinics-form");
   }
+  // const clinics = await db.query.usersToClinicsTable.findMany({
+  //   where: eq(usersToClinicsTable.userId, session.user.id),
+  // });
+
+  // if (clinics.length === 0) {
+  //   redirect("/clinics-form");
+  // }
   return (
     <div className="">
       <h1>{session?.user?.name}</h1>
